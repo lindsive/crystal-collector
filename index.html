@@ -14,36 +14,134 @@
     <div>
         <p>You will be given a random number at the start of the game.
             <br>
+            <br>
             There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+            <br>
             <br>
             You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
             <br>
+            <br>
             The value of each crystal is hidden from you until you click on it.
+            <br>
             <br>
             Each time when the game starts, the game will change the values of each crystal.
         </p>
     </div>
 
+    <div id="imgContainer">
+        <img id="redCrystal" src="./assets/images/red.png">
+        <img id="greenCrystal" src="./assets/images/green.png">
+        <img id="blueCrystal" src="./assets/images/blue.png">
+        <img id="yellowCrystal" src="./assets/images/yellow.png">
+    </div>
+
     <div id ="randomNumber">
         <!--random number container-->
     </div>
-
+    
     <div id="winsAndLosses">
-        <!-- wins and losses container -->
+        <p>Wins: </p>
+        <p>Losses: </p>
     </div>
 
-    <div> <!--gems-->
-
-    </div>
-
-    <div id="totalGuess">
-        <!--total guess container-->
+    <div id="score">
+        <h1>0</h1>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
     <script>
         $(document).ready(function () {
+            var wins;
+            var losses;
+            var computerGeneratedNumber;
+            var counter;
+            var crystalPicked;
+            var score;
+            
+            var game = function() {
+
+                $("#redCrystal").on("click", function (){
+                    var generatedNum = Math.floor(Math.random() * 12) + 1;
+                    $("#score").text(generatedNum);
+                });
+
+                $("#greenCrystal").on("click", function (){
+                    var generatedNum = Math.floor(Math.random() * 12) + 1;
+                    $("#score").text(generatedNum);
+                });
+
+                $("#blueCrystal").on("click", function (){
+                    var generatedNum = Math.floor(Math.random() * 12) + 1;
+                    $("#score").text(generatedNum);
+                });
+
+                $("#yellowCrystal").on("click", function (){
+                    var generatedNum = Math.floor(Math.random() * 12) + 1;
+                    $("#score").text(generatedNum);
+                });
+
+                computerGeneratedNumber = Math.floor(Math.random() * 120) + 19; 
+
+                counter = 0;
+
+                $("#score").text(score);
+                $("#randomNumber").text(computerGeneratedNumber);
+
+        };
+
+
+        var addingNumbers = function (crystalPicked) {
+            score += crystalPicked.value;
+            $("#score").text(score);
+            result();
+
+        };
+
+        var restartGame = function() {
+            $("#greenCrystal").click(function (){
+                addingNumbers();
+            });
+
+            $("#redCrystal").click(function (){
+                addingNumbers();
+            });
+
+            $("#blueCrystal").click(function (){
+                addingNumbers();
+            });
+
+            $("#yellowCrystal").click(function (){
+                addingNumbers();
+            });
+        };
+
+        var result = function () {
+            if (score === computerGeneratedNumber) {
+                alert("You won"); 
+                wins++;
+                restartGame();
+            }
+
+            else if (score > computerGeneratedNumber) {
+                alert("You lose");
+                losses++;
+                restartGame();
+            }
+        };
+
+        // starting game
+
+        game();
+
+
+
+          
+
+
+
+
+
 
         
         

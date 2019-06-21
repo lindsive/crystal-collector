@@ -29,10 +29,10 @@
     </div>
 
     <div id="imgContainer">
-        <img id="redCrystal" src="./assets/images/red.png">
-        <img id="greenCrystal" src="./assets/images/green.png">
-        <img id="blueCrystal" src="./assets/images/blue.png">
-        <img id="yellowCrystal" src="./assets/images/yellow.png">
+        <img id="redCrystal" class="crystal" src="./assets/images/red.png">
+        <img id="greenCrystal" class="crystal" src="./assets/images/green.png">
+        <img id="blueCrystal" class="crystal" src="./assets/images/blue.png">
+        <img id="yellowCrystal" class="crystal" src="./assets/images/yellow.png">
     </div>
 
     <div id ="randomNumber">
@@ -61,6 +61,11 @@
             
             var game = function() {
 
+                // $(".crystal").on("click", function (){
+                //     var generatedNum = Math.floor(Math.random() * 12) + 1;
+                //     $("#score").text(generatedNum);
+                // });
+
                 $("#redCrystal").on("click", function (){
                     var generatedNum = Math.floor(Math.random() * 12) + 1;
                     $("#score").text(generatedNum);
@@ -83,7 +88,7 @@
 
                 computerGeneratedNumber = Math.floor(Math.random() * 120) + 19; 
 
-                counter = 0;
+                score + generatedNum;
 
                 $("#score").text(score);
                 $("#randomNumber").text(computerGeneratedNumber);
@@ -92,7 +97,7 @@
 
 
         var addingNumbers = function (crystalPicked) {
-            score += crystalPicked.value;
+            score += generatedNum;
             $("#score").text(score);
             result();
 
@@ -114,6 +119,8 @@
             $("#yellowCrystal").click(function (){
                 addingNumbers();
             });
+
+            counter = 0;
         };
 
         var result = function () {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name=”viewport” content=”width=device-width, initial-scale=1″>
-    <title>Crystal Collector Game</title>
+    <title>Crystal Collector Game PART 1</title>
 </head>
 
 <body>
@@ -44,7 +44,7 @@
         <p>Losses: </p>
     </div>
 
-    <div id="score">
+    <div id="targetScore">
         <h1>0</h1>
     </div>
 
@@ -54,72 +54,67 @@
         $(document).ready(function () {
             var wins;
             var losses;
-            var computerGeneratedNumber;
+            var computerGeneratedNumber = Math.floor(Math.random() * 120) + 19;
             var counter;
             var crystalPicked;
-            var score;
+            var score = 0;
             
             var game = function() {
 
                 // $(".crystal").on("click", function (){
                 //     var generatedNum = Math.floor(Math.random() * 12) + 1;
-                //     $("#score").text(generatedNum);
+                //     $("#targetScore").text(generatedNum);
+                //     return generatedNum;
                 // });
 
-                $("#redCrystal").on("click", function (){
-                    var generatedNum = Math.floor(Math.random() * 12) + 1;
-                    $("#score").text(generatedNum);
+                $("#redCrystal").on("click", function (redCrystal){
+                    // $("#targetScore").text(generatedNum);
+                
                 });
 
                 $("#greenCrystal").on("click", function (){
-                    var generatedNum = Math.floor(Math.random() * 12) + 1;
-                    $("#score").text(generatedNum);
+                    
+                    // $("#targetScore").text(generatedNum);
                 });
 
                 $("#blueCrystal").on("click", function (){
-                    var generatedNum = Math.floor(Math.random() * 12) + 1;
-                    $("#score").text(generatedNum);
+                    
+                    // $("#targetScore").text(generatedNum);
                 });
 
                 $("#yellowCrystal").on("click", function (){
-                    var generatedNum = Math.floor(Math.random() * 12) + 1;
-                    $("#score").text(generatedNum);
+                    
+                    // $("#targetScore").text(generatedNum);
                 });
+                var generatedNum = Math.floor(Math.random() * 12) + 1;
+                 computerGeneratedNumber 
 
-                computerGeneratedNumber = Math.floor(Math.random() * 120) + 19; 
+                // score + generatedNum;
 
-                score + generatedNum;
-
-                $("#score").text(score);
+                // $("#score").text(score);
                 $("#randomNumber").text(computerGeneratedNumber);
 
         };
 
 
-        var addingNumbers = function (crystalPicked) {
-            score += generatedNum;
-            $("#score").text(score);
-            result();
+        // var addingNumbers = function (crystalPicked) {
+        //     score += generatedNum;
+        //     $("#score").text(score);
+        //     result();
 
-        };
+        // };
+
+
+        function crystalPicked(value){
+            generatedNum += value
+            $("#score").html(generatedNum);
+}
+
+
 
         var restartGame = function() {
-            $("#greenCrystal").click(function (){
-                addingNumbers();
-            });
-
-            $("#redCrystal").click(function (){
-                addingNumbers();
-            });
-
-            $("#blueCrystal").click(function (){
-                addingNumbers();
-            });
-
-            $("#yellowCrystal").click(function (){
-                addingNumbers();
-            });
-
+            // var generatedNum = Math.floor(Math.random() * 12) + 1;
+            var generatedNum = Math.floor(Math.random() * 12) + 1;
             counter = 0;
         };
 
@@ -140,19 +135,8 @@
         // starting game
 
         game();
-
-
-
-          
-
-
-
-
-
-
         
-        
-        
+    
         });
     </script>
 

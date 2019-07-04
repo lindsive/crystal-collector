@@ -55,84 +55,72 @@
             var wins;
             var losses;
             var computerGeneratedNumber = Math.floor(Math.random() * 120) + 19;
-            var counter;
-            var crystalPicked;
-            var score = 0;
+            // var counter;
+            // var crystalPicked;
+            // var score = 0;
             
             var game = function() {
+                var redNum = Math.floor(Math.random() * 12) + 1
+                var greenNum = Math.floor(Math.random() * 12) + 1
+                var blueNum = Math.floor(Math.random() * 12) + 1
+                var yellowNum = Math.floor(Math.random() * 12) + 1
+                var score = 0;
 
-                // $(".crystal").on("click", function (){
-                //     var generatedNum = Math.floor(Math.random() * 12) + 1;
-                //     $("#targetScore").text(generatedNum);
-                //     return generatedNum;
-                // });
+
 
                 $("#redCrystal").on("click", function (redCrystal){
-                    // $("#targetScore").text(generatedNum);
+                    score = score + redNum;
+                    $("#targetScore").text(score);
+                    return score;
+                    check()
                 
                 });
 
                 $("#greenCrystal").on("click", function (){
+                    score = score + greenNum;
+                    $("#targetScore").text(score);
+                    return score;
+                    check()
                     
-                    // $("#targetScore").text(generatedNum);
                 });
 
                 $("#blueCrystal").on("click", function (){
                     
-                    // $("#targetScore").text(generatedNum);
+                    score = score + blueNum;
+                    $("#targetScore").text(score);
+                    return score;
+                    check()
                 });
 
                 $("#yellowCrystal").on("click", function (){
                     
-                    // $("#targetScore").text(generatedNum);
+                    score = score + yellowNum;
+                    $("#targetScore").text(score);
+                    return score;
+                    check()
                 });
-                var generatedNum = Math.floor(Math.random() * 12) + 1;
-                 computerGeneratedNumber 
 
-                // score + generatedNum;
-
-                // $("#score").text(score);
                 $("#randomNumber").text(computerGeneratedNumber);
 
+                console.log(score)
+                console.log(computerGeneratedNumber)
+                // check()
+
         };
 
-
-        // var addingNumbers = function (crystalPicked) {
-        //     score += generatedNum;
-        //     $("#score").text(score);
-        //     result();
-
-        // };
-
-
-        function crystalPicked(value){
-            generatedNum += value
-            $("#score").html(generatedNum);
-}
-
-
-
-        var restartGame = function() {
-            // var generatedNum = Math.floor(Math.random() * 12) + 1;
-            var generatedNum = Math.floor(Math.random() * 12) + 1;
-            counter = 0;
-        };
-
-        var result = function () {
+        function check () {
+   
             if (score === computerGeneratedNumber) {
-                alert("You won"); 
-                wins++;
-                restartGame();
-            }
+                    wins ++
+                    game()
+                }
 
-            else if (score > computerGeneratedNumber) {
-                alert("You lose");
-                losses++;
-                restartGame();
-            }
-        };
+                else if (score > computerGeneratedNumber){
+                    losses++
+                    game()
 
-        // starting game
+                }
+        }
 
         game();
         

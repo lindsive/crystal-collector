@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
-    <meta name=”viewport” content=”width=device-width, initial-scale=1″>
+    <meta name=”viewport” content=”width:device-width, initial-scale=1″>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="./assets/javascript/app.js"></script>
     <title>Crystal Collector Game PART 1</title>
 </head>
 
@@ -15,10 +18,12 @@
         <p>You will be given a random number at the start of the game.
             <br>
             <br>
-            There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+            There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
+            total score.
             <br>
             <br>
-            You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
+            You win the game by matching your total score to random number, you lose the game if your total score goes
+            above the random number.
             <br>
             <br>
             The value of each crystal is hidden from you until you click on it.
@@ -35,100 +40,17 @@
         <img id="yellowCrystal" class="crystal" src="./assets/images/yellow.png">
     </div>
 
-    <div id ="randomNumber">
+    <div id="randomNumber">
         <!--random number container-->
     </div>
-    
+
     <div id="winsAndLosses">
-        <p>Wins: </p>
-        <p>Losses: </p>
+        <p id="win">Wins: </p>
+        <p id="loss">Losses: </p>
     </div>
 
     <div id="targetScore">
-        <h1>0</h1>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            var wins;
-            var losses;
-            var computerGeneratedNumber = Math.floor(Math.random() * 120) + 19;
-            // var counter;
-            // var crystalPicked;
-            // var score = 0;
-            
-            var game = function() {
-                var redNum = Math.floor(Math.random() * 12) + 1
-                var greenNum = Math.floor(Math.random() * 12) + 1
-                var blueNum = Math.floor(Math.random() * 12) + 1
-                var yellowNum = Math.floor(Math.random() * 12) + 1
-                var score = 0;
-
-
-
-                $("#redCrystal").on("click", function (redCrystal){
-                    score = score + redNum;
-                    $("#targetScore").text(score);
-                    return score;
-                    check()
-                
-                });
-
-                $("#greenCrystal").on("click", function (){
-                    score = score + greenNum;
-                    $("#targetScore").text(score);
-                    return score;
-                    check()
-                    
-                });
-
-                $("#blueCrystal").on("click", function (){
-                    
-                    score = score + blueNum;
-                    $("#targetScore").text(score);
-                    return score;
-                    check()
-                });
-
-                $("#yellowCrystal").on("click", function (){
-                    
-                    score = score + yellowNum;
-                    $("#targetScore").text(score);
-                    return score;
-                    check()
-                });
-
-                $("#randomNumber").text(computerGeneratedNumber);
-
-                console.log(score)
-                console.log(computerGeneratedNumber)
-                // check()
-
-        };
-
-        function check () {
-   
-            if (score === computerGeneratedNumber) {
-                    wins ++
-                    game()
-                }
-
-                else if (score > computerGeneratedNumber){
-                    losses++
-                    game()
-
-                }
-        }
-
-        game();
-        
-    
-        });
-    </script>
-
-
-
 </body>
+
 </html>

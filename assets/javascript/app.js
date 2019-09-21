@@ -12,10 +12,8 @@ $(document).ready(function () {
         var yellowNum = Math.floor(Math.random() * 12) + 1
         computerGeneratedNumber = Math.floor(Math.random() * 120) + 19
         score = 0
-        // change score display
-        // change cpugenerated display
-
-        $("#redCrystal").on("click", function (redCrystal) {
+    
+        $("#bluePurple").on("click", function (redCrystal) {
             score += redNum;
             $("#targetScore").text(score);
             check()
@@ -26,36 +24,25 @@ $(document).ready(function () {
         $("#greenCrystal").on("click", function () {
             score += greenNum;
             $("#targetScore").text(score);
-            check()
-            // return score;
-
-
+            check();
         });
 
-        $("#blueCrystal").on("click", function () {
-
+        $("#purple").on("click", function () {
             score += blueNum;
             $("#targetScore").text(score);
-            check()
-            // return score;
-
+            check();
         });
 
-        $("#yellowCrystal").on("click", function () {
-
+        $("#seafoam").on("click", function () {
             score += yellowNum;
             $("#targetScore").text(score);
-            check()
-            // return score;
-
+            check();
         });
 
         $("#randomNumber").text(computerGeneratedNumber);
 
         console.log(score)
         console.log(computerGeneratedNumber)
-        // check()
-
     };
 
     function check() {
@@ -70,7 +57,6 @@ $(document).ready(function () {
             losses++
             game()
             $("#loss").text("Losses: " + losses)
-
         }
     }
 

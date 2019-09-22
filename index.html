@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name=”viewport” content=”width:device-width, initial-scale=1″>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="./assets/javascript/app.js"></script>
-    <title>Crystal Collector Game PART 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <title>Crystal Collector</title>
 </head>
 
 <body>
     <div>
-        <h1>Crystals Collector!</h1>
+        <h1>Crystal Collector!</h1>
     </div>
 
     <div>
@@ -34,14 +34,13 @@
     </div>
 
     <div id="imgContainer">
-        <img id="bluePurple" class="crystal" src="./assets/images/bluePurple.png">
-        <img id="greenCrystal" class="crystal" src="./assets/images/green.png">
-        <img id="purple" class="crystal" src="./assets/images/purple.png">
-        <img id="seafoam" class="crystal" src="./assets/images/seafoam.png">
+        <img id="bluePurple" class="crystal animated bounceInDown fast" src="./assets/images/bluePurple.png">
+        <img id="greenCrystal" class="crystal animated bounceInDown delay-1s fast" src="./assets/images/green.png">
+        <img id="purple" class="crystal animated bounceInDown delay-2s fast" src="./assets/images/purple.png">
+        <img id="seafoam" class="crystal animated bounceInDown delay-3s fast" src="./assets/images/seafoam.png">
     </div>
 
     <div id="randomNumber">
-        <!--random number container-->
     </div>
 
     <div id="winsAndLosses">
@@ -52,5 +51,6 @@
     <div id="targetScore">
     </div>
 </body>
+<script src="./assets/javascript/app.js"></script>
 
 </html>

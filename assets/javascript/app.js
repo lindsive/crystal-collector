@@ -6,19 +6,17 @@ $(document).ready(function () {
     var score = 0;
 
     var game = function () {
-        var redNum = Math.floor(Math.random() * 12) + 1
-        var greenNum = Math.floor(Math.random() * 12) + 1
-        var blueNum = Math.floor(Math.random() * 12) + 1
-        var yellowNum = Math.floor(Math.random() * 12) + 1
-        computerGeneratedNumber = Math.floor(Math.random() * 120) + 19
-        score = 0
+        var redNum = Math.floor(Math.random() * 12) + 1;
+        var greenNum = Math.floor(Math.random() * 12) + 1;
+        var blueNum = Math.floor(Math.random() * 12) + 1;
+        var yellowNum = Math.floor(Math.random() * 12) + 1;
+        computerGeneratedNumber = Math.floor(Math.random() * 120) + 19;
+        score = 0;
     
         $("#bluePurple").on("click", function (redCrystal) {
             score += redNum;
             $("#targetScore").text(score);
-            check()
-            // return score;
-
+            check();
         });
 
         $("#greenCrystal").on("click", function () {
@@ -40,9 +38,6 @@ $(document).ready(function () {
         });
 
         $("#randomNumber").text(computerGeneratedNumber);
-
-        console.log(score)
-        console.log(computerGeneratedNumber)
     };
 
     function check() {
@@ -58,7 +53,7 @@ $(document).ready(function () {
             game()
             $("#loss").text("Losses: " + losses)
         }
-    }
+    };
 
     game();
     check()

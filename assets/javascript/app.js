@@ -15,29 +15,29 @@ $(document).ready(function () {
     
         $("#bluePurple").on("click", function (redCrystal) {
             score += redNum;
-            $("#targetScore").text(score);
+            $("#targetScore").text("Your tally so far: " + score);
             check();
         });
 
         $("#greenCrystal").on("click", function () {
             score += greenNum;
-            $("#targetScore").text(score);
+            $("#targetScore").text("Your tally so far: " + score);
             check();
         });
 
         $("#purple").on("click", function () {
             score += blueNum;
-            $("#targetScore").text(score);
+            $("#targetScore").text("Your tally so far: " + score);
             check();
         });
 
         $("#seafoam").on("click", function () {
             score += yellowNum;
-            $("#targetScore").text(score);
+            $("#targetScore").text("Your tally so far: " + score);
             check();
         });
 
-        $("#randomNumber").text(computerGeneratedNumber);
+        $("#randomNumber").text("Random number: " + computerGeneratedNumber);
     };
 
     function check() {

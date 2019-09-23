@@ -1,3 +1,42 @@
-#imgContainer {
+.imgContainer {
     display: flex;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+img {
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#title {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Averia Serif Libre', cursive;
+    font-size: 3.5rem;
+    padding: 10px;
+
+}
+
+#directions {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#scoreContainer {
+    
 }

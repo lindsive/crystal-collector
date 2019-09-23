@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name=”viewport” content=”width:device-width, initial-scale=1″>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre&display=swap" rel="stylesheet">
     <title>Crystal Collector</title>
 </head>
 
 <body>
-    <div>
-        <h1>Crystal Collector!</h1>
+    <div id=title>
+        Crystal Collector
     </div>
 
-    <div>
+    <div id="directions">
         <p>You will be given a random number at the start of the game.
             <br>
             <br>
@@ -33,22 +36,28 @@
         </p>
     </div>
 
-    <div id="imgContainer">
-        <img id="bluePurple" class="crystal animated bounceInDown fast" src="./assets/images/bluePurple.png">
-        <img id="greenCrystal" class="crystal animated bounceInDown delay-1s fast" src="./assets/images/green.png">
-        <img id="purple" class="crystal animated bounceInDown delay-2s fast" src="./assets/images/purple.png">
-        <img id="seafoam" class="crystal animated bounceInDown delay-3s fast" src="./assets/images/seafoam.png">
+    <div class="imgContainer">
+        <img id="bluePurple" class="crystal animated bounceInDown fast"
+            alt="tall eight sided purple-blue clipart crystal" src="./assets/images/bluePurple.png">
+        <img id="greenCrystal" class="crystal animated bounceInDown delay-1s fast" alt="green clipart diamond"
+            src="./assets/images/green.png">
+        <img id="purple" class="crystal animated bounceInDown delay-2s fast" alt="tall six sided purple clipart crystal"
+            src="./assets/images/purple.png">
+        <img id="seafoam" class="crystal animated bounceInDown delay-3s fast"
+            alt="seafoam blue oval shaped clipart crystal" src="./assets/images/seafoam.png">
     </div>
 
-    <div id="randomNumber">
-    </div>
+    <div id="scoreContainer">
+        <div id="randomNumber">
+        </div>
 
-    <div id="winsAndLosses">
-        <p id="win">Wins: </p>
-        <p id="loss">Losses: </p>
-    </div>
+        <div id="winsAndLosses">
+            <p id="win">Wins: </p>
+            <p id="loss">Losses: </p>
+        </div>
 
-    <div id="targetScore">
+        <div id="targetScore">
+        </div>
     </div>
 </body>
 <script src="./assets/javascript/app.js"></script>
